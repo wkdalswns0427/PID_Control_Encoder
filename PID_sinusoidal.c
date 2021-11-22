@@ -155,8 +155,8 @@ int main(void){
 				softPwmWrite(MOTOR1,Speed);
 				softPwmWrite(MOTOR2, 0);
 				}
-			InterrPos = InterrPos + ((errPos+beferrPos)/2)*LoopTime;
-			D_Loss = (errPos - beferrPos)/LoopTime;
+			InterrPos = InterrPos + ((errPos+beferrPos)/2)*(LoopTime/1000);
+			D_Loss = (errPos - beferrPos)/(LoopTime/1000);
 			beferrPos = errPos;
 			fprintf(fp, "%d\t%f\n", loop, redGearPosition);
 			checkTimeBefore = checkTime;
